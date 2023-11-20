@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
   <body id="login">
-    <div class="container">
+    <div class="container" style="position: relative">
 
       <form id="login_form" class="form-signin" method="post">
         <h3 class="form-signin-heading"><i class="icon-lock"></i> Please Login</h3>
@@ -21,7 +21,7 @@
 						success: function(html){
 						if(html=='true')
 						{
-						$.jGrowl("Welcome to CHMSC Learning Management System", { header: 'Access Granted' });
+						$.jGrowl("Welcome to ALS Learning Management System", { header: 'Access Granted' });
 						var delay = 2000;
 							setTimeout(function(){ window.location = 'dashboard.php'  }, delay);  
 						}
