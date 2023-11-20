@@ -100,7 +100,7 @@
 						 <!-- end breadcrumb -->
 					 
                         <!-- block -->
-                        <div id="block_bg" class="block">
+                        <div id="block_bg" class="block" style="margin-left: 10px; margin-top: 34px;">
                             <div class="navbar navbar-inner block-header">
 							    <div id="" class="muted pull-left"><h4> Practice Quiz Progress</h4></div>
 							</div>
@@ -143,12 +143,17 @@
 										<b>Already Taken Score <?php echo $grade; ?></b>
 						
 										</td>            
-														<script type="text/javascript">
-														$(document).ready(function(){
-															$('#<?php echo $id; ?>Take This Quiz').tooltip('show');
-															$('#<?php echo $id; ?>Take This Quiz').tooltip('hide');
-														});
-														</script>										 
+										<script type="text/javascript">
+    $(document).ready(function () {
+        <?php if (!is_null($id)) { ?>
+            var elementId = '<?php echo $id; ?>TakeThisQuiz';
+            if (document.getElementById(elementId)) {
+                $('#' + elementId).tooltip('show');
+                $('#' + elementId).tooltip('hide');
+            }
+        <?php } ?>
+    });
+</script>
 										</tr>
 										<?php } ?>
 						 <?php } ?>
